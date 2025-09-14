@@ -1,0 +1,117 @@
+:root {
+  --accent:#0c6b9b;
+  --muted:#666;
+  --card:#fff;
+  --bg:#f5f7fb;
+}
+
+* { box-sizing:border-box }
+body {
+  font-family: Inter,Arial,Helvetica,sans-serif;
+  margin:0;
+  background:var(--bg);
+  color:#222;
+}
+
+.nav {
+  background:var(--accent);
+  color:#fff;
+  padding:12px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand { font-weight:700; font-size:1.2rem }
+
+.container { max-width:1100px; margin:20px auto; padding:0 16px }
+
+h1 { margin:12px 0 8px }
+
+.layout { display:flex; gap:20px }
+.left { flex:1 }
+.right {
+  width:320px;
+  background:var(--card);
+  padding:12px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+
+.search { display:flex; gap:8px; margin:12px 0 }
+.search input { flex:1; padding:8px; border-radius:8px; border:1px solid #ddd }
+.search button { padding:8px 10px; border-radius:8px; border:1px solid #ddd; background:white; cursor:pointer }
+
+.filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px }
+.pill {
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid #ddd;
+  background:white;
+  cursor:pointer;
+  font-size:0.9rem;
+}
+.pill.active { background:var(--accent); color:#fff; border-color:var(--accent) }
+
+.list {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:12px;
+}
+
+.card {
+  background:var(--card);
+  padding:12px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  position:relative;
+}
+.card.premium { border-left:4px solid #ff7b4a }
+.card h4 { margin:0 0 6px }
+.card p { margin:6px 0; color:var(--muted) }
+
+.card .actions { display:flex; gap:8px; align-items:center; margin-top:8px }
+.btn { padding:6px 10px; border-radius:8px; border:1px solid #ccc; background:white; cursor:pointer }
+.badge { background:#ffdf5a; padding:4px 8px; border-radius:8px; font-size:0.85rem; margin-left:auto }
+
+.tips { list-style:none; padding:0; margin:0; color:var(--muted) }
+.tips li { margin-bottom:8px }
+
+.favorites-box { margin-top:12px; padding-top:12px; border-top:1px dashed #eee }
+.fav-item { font-size:0.95rem; margin-bottom:6px }
+
+.modal {
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.45);
+}
+.modal .content {
+  background:white;
+  padding:18px;
+  border-radius:10px;
+  width:94%;
+  max-width:720px;
+  position:relative;
+}
+.close {
+  position:absolute;
+  right:12px;
+  top:8px;
+  border:none;
+  background:transparent;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.exercise-list { margin:12px 0; padding-left:18px }
+
+@media (max-width:900px) {
+  .layout { flex-direction:column }
+  .right { width:100% }
+  .list { grid-template-columns:1fr }
+}
+
+.center { display:flex; align-items:center; gap:8px }
